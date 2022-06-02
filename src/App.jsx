@@ -1,29 +1,12 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { TaskItem } from "./components/TaskItem.jsx";
+import Tasks from "./components/Tasks/Tasks.jsx";
+import Header from "./components/Header/Header.jsx";
+import "../src/styles/global.scss";
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
-
-  const fetchTasks = async () => {
-    try {
-      const { data } = await axios.get("http://localhost:8000/tasks");
-
-      setTasks(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchTasks();
-  }, []);
-
   return (
     <>
-      {tasks.map((task) => (
-        <TaskItem task={task} key={task.id} />
-      ))}
+      <Header />
+      <Tasks />
     </>
   );
 };
