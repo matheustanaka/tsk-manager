@@ -1,0 +1,31 @@
+@import "../../styles/global.scss";
+
+header {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: $dark-blue;
+    width: 100%;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $white;
+    }
+
+    button {
+        padding: 0.8rem;
+        border: 0px;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        background-color: $blue;
+        color: $white;
+
+        cursor: pointer;
+        transition: background-color 200ms;
+    }
+
+    button:hover {
+        background-color: #4ca0ff;
+    }
+}
