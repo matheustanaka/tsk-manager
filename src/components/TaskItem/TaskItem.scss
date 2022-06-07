@@ -1,7 +1,9 @@
+@import "../../styles/global.scss";
+
 .task-item-container {
     display: flex;
     justify-content: space-between;
-    max-width: 50%;
+    padding: 0px 20px;
 
     @media (max-width: 768px) {
         max-width: 90%;
@@ -22,14 +24,15 @@
     display: block;
     position: relative;
     padding-left: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 16px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     padding-top: 10px;
+
 }
 
 .checkbox-container-completed {
@@ -54,7 +57,7 @@
     left: 0;
     height: 20px;
     width: 20px;
-    background: linear-gradient(259.93deg, #000000 -41.68%, #00171f 146.85%);
+    background: linear-gradient(259.93deg, #fffafa -41.68%, #e3e3e3 146.85%);
     border: 2px solid #ffffff;
     border-color: #fff;
     border-radius: 5px;
@@ -67,12 +70,12 @@
 
 /* When the checkbox is checked, add a blue background */
 .checkbox-container input:checked ~ .checkmark {
-    background: linear-gradient(262.71deg, #00d1ff -30.04%, #00ffa3 124.74%);
+    background: $blue;
 }
 
 .checkbox-container input:checked ~ .completed {
-    background: #3a3847;
-    border-color: #3a3847;
+    background: $dark-blue;
+    border-color: $dark-blue;
     border-radius: 5px;
 }
 
