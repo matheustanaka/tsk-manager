@@ -38,7 +38,11 @@ export const AddTask = ({ fetchTasks }) => {
 
   return (
     <div className="add-task-container">
-      <CustomInput value={task} onChange={onChange} />
+      <CustomInput
+        value={task}
+        onChange={onChange}
+        onEnterPress={handleTaskAddition}
+      />
       <CustomButton onClick={handleTaskAddition}>
         <FaPlus size={15} />
       </CustomButton>
