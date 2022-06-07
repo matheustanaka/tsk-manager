@@ -29,7 +29,7 @@ export const AddTask = ({ fetchTasks }) => {
       });
 
       await fetchTasks();
-
+      alert.success("A tarefa foi adicionada com Sucesso");
       setTask("");
     } catch (error) {
       alert.error("Não foi possível criar a tarefa");
