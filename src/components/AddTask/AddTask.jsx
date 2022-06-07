@@ -7,6 +7,7 @@ import { CustomInput } from "../CustomInput/CustomInput.jsx";
 import { CustomButton } from "../CustomButton/CustomButton.jsx";
 
 import "./AddTask.scss";
+import axios from "axios";
 
 export const AddTask = () => {
   const [task, setTask] = useState("");
@@ -21,6 +22,11 @@ export const AddTask = () => {
     try {
       if (task.length === 0)
         return alert.error("Tarefa precisa de uma descrição para ser criada");
+
+      await axios.post("http://localhost:8000/tasks", {
+        description: task,
+        isCompleted: false,
+      });
     } catch (error) {
       console.log(error);
     }
