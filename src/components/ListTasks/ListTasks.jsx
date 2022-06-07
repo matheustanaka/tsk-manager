@@ -36,7 +36,11 @@ const ListTasks = () => {
           {tasks
             .filter((task) => task.isCompleted === false)
             .map((lastTask) => (
-              <TaskItem key={lastTask.id} task={lastTask} />
+              <TaskItem
+                key={lastTask.id}
+                task={lastTask}
+                fetchTasks={fetchTasks}
+              />
             ))}
         </div>
       </div>
@@ -47,7 +51,11 @@ const ListTasks = () => {
         {tasks
           .filter((task) => task.isCompleted)
           .map((completedTask) => (
-            <TaskItem key={completedTask.id} task={completedTask} />
+            <TaskItem
+              key={completedTask.id}
+              task={completedTask}
+              fetchTasks={fetchTasks}
+            />
           ))}
       </div>
     </div>

@@ -1,13 +1,17 @@
-import "../TaskItem/TaskItem.scss";
-import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
+import { AiFillDelete } from "react-icons/ai";
 import { useAlert } from "react-alert";
 
-export const TaskItem = ({ task }) => {
+import "../TaskItem/TaskItem.scss";
+
+export const TaskItem = ({ task, fetchTasks }) => {
   const alert = useAlert();
   const handleDeleteTask = async () => {
     try {
       await axios.delete(`http://localhost:8000/tasks/${task._id}`);
+
+      await fetchTasks();
+      alert.success("A tarefa foi removida com sucesso");
     } catch (error) {
       alert.error("Não foi possível deletar a tarefa");
     }
