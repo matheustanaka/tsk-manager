@@ -16,6 +16,19 @@ export const TaskItem = ({ task, fetchTasks }) => {
       alert.error("Não foi possível deletar a tarefa");
     }
   };
+
+  const handleTaskUpdateCheckbox = async (e) => {
+    try {
+      await axios.patch(`http://localhost:8000/tasks/${task._id}`, {
+        isCompleted: e.target.checked,
+      });
+
+      await fetchTasks();
+      alert.success("A tarefa foi atualizada com sucesso");
+    } catch (error) {
+      alert.error("Não foi possível atualizar a tarefa");
+    }
+  };
   return (
     <div className="task-item-container">
       <div className="task-description">
@@ -27,7 +40,11 @@ export const TaskItem = ({ task, fetchTasks }) => {
           }
         >
           <h4>{task.description}</h4>
-          <input type="checkbox" defaultChecked={task.isCompleted} />
+          <input
+            type="checkbox"
+            defaultChecked={task.isCompleted}
+            onChange={handleTaskUpdateCheckbox}
+          />
           <span
             className={task.isCompleted ? "checkmark completed" : "checkmark"}
           />
@@ -35,7 +52,11 @@ export const TaskItem = ({ task, fetchTasks }) => {
       </div>
 
       <div className="delete">
-        <AiFillDelete size={18} color="#F97474" onClick={handleDeleteTask} />
+        <AiFillDelete
+          size={18}
+          color="#F97474"
+          onClick={(e) => handleDeleteTask(e)}
+        />
       </div>
     </div>
   );
