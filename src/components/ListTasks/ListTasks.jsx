@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import { TaskItem } from "../TaskItem/TaskItem.jsx";
+import { AddTask } from "../AddTask/AddTask.jsx";
 
 import "../ListTasks/ListTasks.scss";
 
@@ -24,8 +25,9 @@ const ListTasks = () => {
 
   return (
     <div className="tasks-container">
-      <div className="input">
-        <h1>a porra do input</h1>
+      <div className="input-task">
+        <h1>Adicionar Tarefa</h1>
+        <AddTask />
       </div>
 
       <div className="last-tasks">
