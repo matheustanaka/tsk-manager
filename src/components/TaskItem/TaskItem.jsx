@@ -11,7 +11,7 @@ export const TaskItem = ({ task }) => {
               : "checkbox-container"
           }
         >
-          <h2>{task.description}</h2>
+          <h4>{task.description}</h4>
           <input type="checkbox" defaultChecked={task.isCompleted} />
           <span
             className={task.isCompleted ? "checkmark completed" : "checkmark"}
