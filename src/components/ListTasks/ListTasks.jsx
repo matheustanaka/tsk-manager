@@ -27,7 +27,7 @@ const ListTasks = () => {
     <div className="tasks-container">
       <div className="input-task">
         <h1>Adicionar Tarefa</h1>
-        <AddTask />
+        <AddTask fetchTasks={fetchTasks} />
       </div>
 
       <div className="last-tasks">

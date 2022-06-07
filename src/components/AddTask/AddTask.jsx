@@ -9,7 +9,7 @@ import { CustomButton } from "../CustomButton/CustomButton.jsx";
 import "./AddTask.scss";
 import axios from "axios";
 
-export const AddTask = () => {
+export const AddTask = ({ fetchTasks }) => {
   const [task, setTask] = useState("");
 
   const alert = useAlert();
@@ -27,8 +27,12 @@ export const AddTask = () => {
         description: task,
         isCompleted: false,
       });
+
+      await fetchTasks();
+
+      setTask("");
     } catch (error) {
-      console.log(error);
+      alert.error("Não foi possível criar a tarefa");
     }
   };
 
