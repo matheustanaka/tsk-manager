@@ -8,7 +8,9 @@ export const TaskItem = ({ task, fetchTasks }) => {
   const alert = useAlert();
   const handleDeleteTask = async () => {
     try {
-      await axios.delete(`http://localhost:8000/tasks/${task._id}`);
+      await axios.delete(
+        `https://tassks-manager.herokuapp.com/tasks/${task._id}`
+      );
 
       await fetchTasks();
       alert.success("A tarefa foi removida com sucesso");
@@ -19,9 +21,12 @@ export const TaskItem = ({ task, fetchTasks }) => {
 
   const handleTaskUpdateCheckbox = async (e) => {
     try {
-      await axios.patch(`http://localhost:8000/tasks/${task._id}`, {
-        isCompleted: e.target.checked,
-      });
+      await axios.patch(
+        `https://tassks-manager.herokuapp.com/tasks/${task._id}`,
+        {
+          isCompleted: e.target.checked,
+        }
+      );
 
       await fetchTasks();
       alert.success("A tarefa foi atualizada com sucesso");

@@ -14,7 +14,9 @@ const ListTasks = () => {
 
   const fetchTasks = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8000/tasks");
+      const { data } = await axios.get(
+        "https://tassks-manager.herokuapp.com/tasks"
+      );
 
       setTasks(data);
     } catch (_error) {

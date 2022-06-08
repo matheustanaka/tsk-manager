@@ -23,7 +23,7 @@ export const AddTask = ({ fetchTasks }) => {
       if (task.length === 0)
         return alert.error("Tarefa precisa de uma descrição para ser criada");
 
-      await axios.post("http://localhost:8000/tasks", {
+      await axios.post("https://tassks-manager.herokuapp.com/tasks", {
         description: task,
         isCompleted: false,
       });
