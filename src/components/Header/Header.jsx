@@ -5,7 +5,13 @@ const Header = () => {
     <div>
       <header>
         <h1>Task Manager</h1>
-        <button>Repository</button>
+        <a
+          href="https://github.com/matheustanaka/tsk-manager"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button> Repository </button>
+        </a>
       </header>
     </div>
   );
