@@ -12,7 +12,7 @@ export const TaskItem = ({ task, fetchTasks }) => {
 
       await fetchTasks();
       alert.success("A tarefa foi removida com sucesso");
-    } catch (error) {
+    } catch (_error) {
       alert.error("Não foi possível deletar a tarefa");
     }
   };
@@ -25,7 +25,7 @@ export const TaskItem = ({ task, fetchTasks }) => {
 
       await fetchTasks();
       alert.success("A tarefa foi atualizada com sucesso");
-    } catch (error) {
+    } catch (_error) {
       alert.error("Não foi possível atualizar a tarefa");
     }
   };
