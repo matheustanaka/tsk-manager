@@ -27,6 +27,7 @@ You can clone the repository or just check it deployed in this
 <p>The application is front-end part of a full-stack project.</p>
 <p>You can do a simple CRUD operation, where you will create, read, update and delete a task.</p>
 <p>If you are interested about the API check this link below to see the back-end deployed.</p>
+
 - [back-end](https://tassks-manager.herokuapp.com/tasks)
 
 ## Tech Stack 💻
